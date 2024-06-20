@@ -3,14 +3,12 @@ rm(list=ls())
 library(metafor)
 library(meta)
 library(readxl)
-dat <- read_excel("C:/Users/alexa/Desktop/Idrætsprojekt 2.0/Data/Samlet Data.xlsx")
-PDUPDRS <- read_excel("C:/Users/alexa/Desktop/Idrætsprojekt 2.0/Data/Kun PD - disease severity, UPDRS.xlsx")
-PDALDER <- read_excel("C:/Users/alexa/Desktop/Idrætsprojekt 2.0/Data/Kun PD.xlsx")
-Stroke <- read_excel("C:/Users/alexa/Desktop/Idrætsprojekt 2.0/Data/Kun stroke sorteret efter alder.xlsx")
-AD <- read_excel("C:/Users/alexa/Desktop/Idrætsprojekt 2.0/Data/Kun AD.xlsx")
-ref <- dat[1,] #Denne linje i datasættet er for referencepopulationen. 
-#Den bliver altså gemt som et objekt der hedder "ref" for reference.
-#Da ref ikke skal bruge i den videre analyse, fjernes den række via koden nedenunder.
+dat <- read_excel("C:/Users/alexa/Desktop/IdrÃ¦tsprojekt 2.0/Data/Samlet Data.xlsx")
+PDUPDRS <- read_excel("C:/Users/alexa/Desktop/IdrÃ¦tsprojekt 2.0/Data/Kun PD - disease severity, UPDRS.xlsx")
+PDALDER <- read_excel("C:/Users/alexa/Desktop/IdrÃ¦tsprojekt 2.0/Data/Kun PD.xlsx")
+Stroke <- read_excel("C:/Users/alexa/Desktop/IdrÃ¦tsprojekt 2.0/Data/Kun stroke sorteret efter alder.xlsx")
+AD <- read_excel("C:/Users/alexa/Desktop/IdrÃ¦tsprojekt 2.0/Data/Kun AD.xlsx")
+ref <- dat[1,] #Denne linje i datasÃ¦ttet er for referencepopulationen. 
 dat <- dat[-c(1),]
 
 # Data and ies calculation for overall (ies = Individual effect size)
@@ -131,7 +129,7 @@ print(pes)
 # Heterogeneity for PD sorted by age
 confint(pes.da)
 pes.summary <- metaprop(cases, total, authoryear, data = dat, sm = "PFT")
-dev.new() # Åbner et nyt grafikapparat
+dev.new() # Ã…bner et nyt grafikapparat
 forest(pes.summary, xlim = c(0, 0.7), comb.fixed = FALSE, col.square.lines = "navy", 
        col.square = "navy", weight.study = "random", ref = ref$Porportion[1])
 
