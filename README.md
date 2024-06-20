@@ -1,0 +1,1 @@
+Her finder du min meta-analyse om prævalensen af sarkopeni i neurodegenerative sygdomme. Hypotesen bag projektet er at sarkopeni er accelereret i mennesker med neurodegenerative sygdomme, sandsynligvis for er centralnervesystemet påvirket, vil det bløde ud i bevægapparatet.
